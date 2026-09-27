@@ -40,7 +40,7 @@ def llm_qa(pesticide_name, crop_name, user_question):
     if not groq_api:
         raise ValueError("GROQ_API_KEY missing! Check your .env file.")
 
-    llm = ChatGroq(model='llama-3.3-70b-versatile', api_key=groq_api, temperature=0.3)
+    llm = ChatGroq(model='openai/gpt-oss-120b', api_key=groq_api, temperature=0.3)
 
     prompt = PromptTemplate(
         input_variables=['pesticide', 'crop', 'question'],
